@@ -145,12 +145,12 @@ function escapeHtml(s) {
 }
 
 function formatExample(ex) {
-    let lines = escapeHtml(ex).split("\n");
-    return lines.map(line => {
-        line = line.replace(/^(\$ )/, '<span class="prompt">$1</span>');
-        line = line.replace(/(^|\s)(-{1,2}[a-zA-Z][\w-]*)/g, '$1<span class="flag">$2</span>');
-        return line;
-    }).join("\n");
+    return ex.map(([cmd, note]) => {
+        let cmdHtml = escapeHtml(cmd);
+        cmdHtml = cmdHtml.replace(/^(\$ )/, '<span class="prompt">$1</span>');
+        cmdHtml = cmdHtml.replace(/(^|\s)(-{1,2}[a-zA-Z][\w-]*)/g, '$1<span class="flag">$2</span>');
+        return '<div class="ex-line"><span class="ex-cmd">' + cmdHtml + '</span><span class="ex-note">' + escapeHtml(note) + '</span></div>';
+    }).join("");
 }
 
 function renderCommands(list) {
@@ -177,7 +177,8 @@ function renderCommands(list) {
         html += '<div class="cmd-grid">';
         cmds.forEach(cmd => {
             const tags = cmd.tags ? cmd.tags.split(",").map(t => '<span class="cmd-tag">' + t.trim() + '</span>').join("") : "";
-            html += '<div class="cmd-card" data-cat="' + cmd.cat + '" data-search="' + (cmd.cmd + " " + cmd.desc + " " + cmd.detail + " " + cmd.tags).toLowerCase() + '">';
+            const exText = cmd.ex.map(e => e[0] + " " + e[1]).join(" ");
+            html += '<div class="cmd-card" data-cat="' + cmd.cat + '" data-search="' + (cmd.cmd + " " + cmd.desc + " " + cmd.detail + " " + exText + " " + cmd.tags).toLowerCase() + '">';
             html += '<div class="cmd-header"><span class="cmd-name">' + cmd.cmd + '</span><span class="cmd-desc">' + cmd.desc + '</span></div>';
             if (cmd.detail) html += '<div class="cmd-detail">' + escapeHtml(cmd.detail) + '</div>';
             html += '<div class="cmd-example">' + formatExample(cmd.ex) + '</div>';
@@ -197,7 +198,8 @@ function filterCommands() {
     }
     if (query) {
         filtered = filtered.filter(cmd => {
-            const searchable = (cmd.cmd + " " + cmd.desc + " " + cmd.detail + " " + cmd.tags).toLowerCase();
+            const exText = cmd.ex.map(e => e[0] + " " + e[1]).join(" ");
+            const searchable = (cmd.cmd + " " + cmd.desc + " " + cmd.detail + " " + exText + " " + cmd.tags).toLowerCase();
             return searchable.includes(query);
         });
     }

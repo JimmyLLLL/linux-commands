@@ -34,9 +34,13 @@ ul{margin:0 0 1rem 1.25rem}li{margin-bottom:.4rem}
 .cmd-name{font-family:"Courier New",monospace;font-size:1.1rem;font-weight:700;color:var(--green)}
 .cmd-desc{color:var(--dim);font-size:.88rem;flex:1;min-width:200px}
 .cmd-detail{color:var(--text);font-size:.83rem;line-height:1.6;margin:.3rem 0 .5rem;opacity:.85;padding-left:.8rem;border-left:2px solid var(--border2)}
-.cmd-example{background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:.6rem .8rem;font-family:"Courier New",monospace;font-size:.85rem;color:var(--gold);overflow-x:auto;margin-top:.4rem;white-space:pre-wrap;word-break:break-word}
-.cmd-example .prompt{color:var(--accent)}
-.cmd-example .flag{color:var(--hover)}
+.cmd-example{background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:.5rem .8rem;font-family:"Courier New",monospace;font-size:.85rem;overflow-x:auto;margin-top:.4rem}
+.ex-line{display:flex;align-items:baseline;gap:.75rem;padding:.25rem 0;border-bottom:1px solid rgba(255,255,255,.04)}
+.ex-line:last-child{border-bottom:none}
+.ex-cmd{color:var(--gold);white-space:nowrap;flex-shrink:0}
+.ex-cmd .prompt{color:var(--accent)}
+.ex-cmd .flag{color:var(--hover)}
+.ex-note{color:var(--dim);font-family:-apple-system,sans-serif;font-size:.78rem;line-height:1.4;flex:1;min-width:0}
 .cmd-tags{display:flex;gap:.3rem;flex-wrap:wrap;margin-top:.5rem}
 .cmd-tag{font-size:.65rem;background:var(--bg2);color:var(--dim);padding:.15rem .5rem;border-radius:4px;border:1px solid var(--border)}
 
