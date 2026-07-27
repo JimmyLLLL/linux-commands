@@ -191,16 +191,20 @@ function renderCommands(list) {
 }
 
 function filterCommands() {
-    const query = document.getElementById("searchBox").value.toLowerCase().trim();
+    const raw = document.getElementById("searchBox").value.toLowerCase().trim();
     let filtered = COMMANDS;
     if (activeCat !== "all") {
         filtered = filtered.filter(cmd => cmd.cat === activeCat);
     }
-    if (query) {
+    if (raw) {
+        const query = raw.replace(/[.*+?^${}()|[\]\\]/g, "");
+        if (!query) { renderCommands(filtered); return; }
+        const re = new RegExp("(^|[\\s_,.;:/])" + query, "i");
         filtered = filtered.filter(cmd => {
+            if (cmd.cmd.toLowerCase().startsWith(query)) return true;
             const exText = cmd.ex.map(e => e[0] + " " + e[1]).join(" ");
-            const searchable = (cmd.cmd + " " + cmd.desc + " " + cmd.detail + " " + exText + " " + cmd.tags).toLowerCase();
-            return searchable.includes(query);
+            const haystack = cmd.desc + " " + cmd.detail + " " + exText + " " + cmd.tags;
+            return re.test(haystack);
         });
     }
     renderCommands(filtered);
