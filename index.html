@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="preconnect" href="https://api.counterapi.dev">
+    <link rel="dns-prefetch" href="https://api.counterapi.dev">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0a0b0f">
+    <meta name="description" content="Complete Linux commands cheat sheet with 200+ commands. Search and browse commands by category — file management, networking, process control, package management, text processing, permissions, and more. Free online Linux command reference.">
+    <meta name="keywords" content="linux commands, linux command list, linux cheat sheet, linux terminal commands, bash commands, shell commands, linux reference, command line, linux tutorial">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://jimmywithfiona.com/linux-commands/">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1840337371416691" crossorigin="anonymous"></script>
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Linux Commands">
+    <meta property="og:title" content="Linux Commands Cheat Sheet — 200+ Commands with Examples">
+    <meta property="og:description" content="Complete Linux command reference. Search 200+ commands by category with syntax examples. Free, no download.">
+    <meta property="og:url" content="https://jimmywithfiona.com/linux-commands/">
+    <meta property="og:image" content="https://jimmywithfiona.com/linux-commands/favicon.svg">
+    <meta property="og:locale" content="en_US">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Linux Commands Cheat Sheet — 200+ Commands">
+    <meta name="twitter:description" content="Search and browse 200+ Linux commands with examples.">
+    <meta name="twitter:image" content="https://jimmywithfiona.com/linux-commands/favicon.svg">
+    <title>Linux Commands Cheat Sheet — 200+ Commands with Examples | Free Reference</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"WebApplication","name":"Linux Commands Cheat Sheet","url":"https://jimmywithfiona.com/linux-commands/","description":"Complete Linux command reference with 200+ commands organized by category, each with syntax examples. Search and browse free online.","applicationCategory":"DeveloperApplication","operatingSystem":"Any (Web Browser)","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+    </script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+        {"@type":"Question","name":"How many Linux commands are there?","acceptedAnswer":{"@type":"Answer","text":"There are hundreds of Linux commands. This cheat sheet covers 200+ of the most commonly used commands organized into 15 categories including file management, networking, process control, and more."}},
+        {"@type":"Question","name":"How do I search for a Linux command?","acceptedAnswer":{"@type":"Answer","text":"Use the search box at the top of this page. Type a command name or keyword (e.g., 'copy', 'network', 'permission') to instantly filter the list."}},
+        {"@type":"Question","name":"What is the most useful Linux command?","acceptedAnswer":{"@type":"Answer","text":"Some of the most essential Linux commands include ls (list files), cd (change directory), grep (search text), find (find files), chmod (change permissions), sudo (run as admin), and ssh (remote access)."}},
+        {"@type":"Question","name":"Is this Linux command reference free?","acceptedAnswer":{"@type":"Answer","text":"Yes, completely free. No signup, no download. Bookmark this page for quick reference anytime."}}
+    ]}
+    </script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://jimmywithfiona.com/"},{"@type":"ListItem","position":2,"name":"Linux Commands","item":"https://jimmywithfiona.com/linux-commands/"}]}
+    </script>
+</head>
+<body>
+<nav class="navbar">
+    <a class="brand" href="/linux-commands/">🐧 Linux Commands</a>
+    <div class="nav-links">
+        <a href="/linux-commands/" class="active">Commands</a>
+        <a href="about.html">About</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="contact.html">Contact</a>
+        <a href="/">🏠 Home</a>
+    </div>
+</nav>
+<main>
+    <h1>Linux Commands Cheat Sheet</h1>
+    <p class="subtitle" id="cmdCount">Loading commands...</p>
+
+    <div class="search-wrap">
+        <span class="search-icon">🔍</span>
+        <input type="text" class="search-box" id="searchBox" placeholder="Search commands... (e.g. grep, copy, network)" autocomplete="off">
+    </div>
+
+    <div class="cat-nav" id="catNav"></div>
+
+    <div id="cmdContainer"></div>
+    <div class="no-results" id="noResults">
+        <p style="font-size:1.5rem;margin-bottom:.5rem;">🔍</p>
+        <p>No commands found. Try a different search term.</p>
+    </div>
+
+    <div class="stats-footer">👁️ Views <strong id="pv">-</strong><span class="stat-divider">|</span>👤 Visitors <strong id="uv">-</strong></div>
+
+    <div class="seo-section">
+        <h2>Linux Commands Reference</h2>
+        <p>This comprehensive Linux commands cheat sheet covers over 200 essential commands every Linux user, developer, and system administrator should know. Whether you're a beginner learning the terminal or an experienced sysadmin needing a quick reference, this guide organizes commands into logical categories for easy browsing and searching.</p>
+        <h2>Categories Covered</h2>
+        <ul>
+            <li><strong>File & Directory</strong> — ls, cd, cp, mv, rm, find, mkdir, and more for navigating and managing files</li>
+            <li><strong>Text & Content</strong> — cat, grep, sed, awk, head, tail, cut, sort, uniq for processing text</li>
+            <li><strong>Permissions & Ownership</strong> — chmod, chown, chgrp, sudo, su for access control</li>
+            <li><strong>Process Management</strong> — ps, top, kill, htop, screen, tmux for managing running processes</li>
+            <li><strong>Networking</strong> — ping, curl, wget, ssh, scp, rsync, netstat, nmap for network operations</li>
+            <li><strong>Package Management</strong> — apt, yum, dnf, pacman, pip, npm for installing software</li>
+            <li><strong>Compression & Archive</strong> — tar, gzip, zip, unzip, bzip2, xz for compressing files</li>
+            <li><strong>System Information</strong> — uname, free, lscpu, lsblk, dmesg, journalctl for system info</li>
+            <li><strong>Disk & Storage</strong> — fdisk, mount, mkfs, dd, fsck for disk management</li>
+            <li><strong>User & Group</strong> — useradd, usermod, passwd, groupadd for user management</li>
+            <li><strong>Shell & Scripting</strong> — echo, export, alias, cron, read for shell scripting</li>
+            <li><strong>Firewall & Security</strong> — iptables, ufw, openssl, gpg, ssh-keygen for security</li>
+            <li><strong>Performance & Monitoring</strong> — vmstat, sar, iotop, strace, perf for performance tuning</li>
+        </ul>
+        <h2>How to Use This Cheat Sheet</h2>
+        <p>Use the search box at the top to instantly filter commands by name or keyword. Click a category tag to browse all commands in that category. Each command card shows the command name, a description, and practical examples with common flags and options.</p>
+        <h2>Linux Command Tips for Beginners</h2>
+        <ul>
+            <li><strong>Use man pages</strong> — Run <code>man command</code> to read the full manual for any command.</li>
+            <li><strong>Tab completion</strong> — Press Tab to auto-complete commands, filenames, and paths.</li>
+            <li><strong>Up arrow</strong> — Cycle through your command history with the Up arrow key.</li>
+            <li><strong>Pipe commands</strong> — Use | to chain commands, e.g., <code>ls -la | grep '.txt'</code>.</li>
+            <li><strong>Redirect output</strong> — Use > to save output to a file, e.g., <code>ls > files.txt</code>.</li>
+            <li><strong>Background tasks</strong> — Add & to run a command in the background, e.g., <code>command &</code>.</li>
+        </ul>
+        <h2>FAQ</h2>
+        <p><strong>What's the difference between sudo and su?</strong> — <code>sudo</code> runs a single command as root, while <code>su</code> switches to the root user's shell entirely.</p>
+        <p><strong>How do I find a file in Linux?</strong> — Use <code>find /path -name 'filename'</code> or <code>locate filename</code> for faster searches.</p>
+        <p><strong>How do I check disk space?</strong> — Use <code>df -h</code> for filesystem usage or <code>du -sh /path</code> for directory size.</p>
+        <p><strong>How do I kill a process?</strong> — Find the PID with <code>ps aux | grep name</code> or <code>pgrep name</code>, then <code>kill PID</code> or <code>killall name</code>.</p>
+    </div>
+</main>
+<footer>
+    <p><a href="about.html">About</a> · <a href="privacy.html">Privacy</a> · <a href="contact.html">Contact</a> · <a href="/">Home</a></p>
+    <p style="margin-top:0.4rem;">Linux Commands © 2026 · Free online command reference</p>
+    <div style="margin-top:0.6rem;font-size:0.72rem;opacity:0.6;">More: <a href="/word-counter/">Word Counter</a> · <a href="/wordle/">Wordle</a> · <a href="/typing-test/">Typing Test</a> · <a href="/age-calculator/">Age Calculator</a> · <a href="/minesweeper/">Minesweeper</a></div>
+</footer>
+<script src="js/counter.js" defer></script>
+<script src="js/commands.js"></script>
+<script>
+let activeCat = "all";
+
+function renderCategories() {
+    const nav = document.getElementById("catNav");
+    nav.innerHTML = '<button class="cat-link active" onclick="setCat(\'all\',this)">All</button>';
+    CATEGORIES.forEach(c => {
+        const count = COMMANDS.filter(cmd => cmd.cat === c.id).length;
+        const btn = document.createElement("button");
+        btn.className = "cat-link";
+        btn.textContent = c.name + " (" + count + ")";
+        btn.onclick = () => setCat(c.id, btn);
+        btn.dataset.cat = c.id;
+        nav.appendChild(btn);
+    });
+}
+
+function setCat(cat, btn) {
+    activeCat = cat;
+    document.querySelectorAll(".cat-link").forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+    filterCommands();
+}
+
+function escapeHtml(s) {
+    return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+}
+
+function formatExample(ex) {
+    let lines = escapeHtml(ex).split("\n");
+    return lines.map(line => {
+        line = line.replace(/^(\$ )/, '<span class="prompt">$1</span>');
+        line = line.replace(/(^|\s)(-{1,2}[a-zA-Z][\w-]*)/g, '$1<span class="flag">$2</span>');
+        return line;
+    }).join("\n");
+}
+
+function renderCommands(list) {
+    const container = document.getElementById("cmdContainer");
+    if (list.length === 0) {
+        container.innerHTML = "";
+        document.getElementById("noResults").classList.add("show");
+        return;
+    }
+    document.getElementById("noResults").classList.remove("show");
+
+    const grouped = {};
+    list.forEach(cmd => {
+        if (!grouped[cmd.cat]) grouped[cmd.cat] = [];
+        grouped[cmd.cat].push(cmd);
+    });
+
+    let html = "";
+    CATEGORIES.forEach(cat => {
+        if (!grouped[cat.id]) return;
+        const cmds = grouped[cat.id];
+        html += '<div class="cat-section" id="cat-' + cat.id + '">';
+        html += '<div class="cat-title">' + cat.name + ' <span class="cat-count">(' + cmds.length + ')</span></div>';
+        html += '<div class="cmd-grid">';
+        cmds.forEach(cmd => {
+            const tags = cmd.tags ? cmd.tags.split(",").map(t => '<span class="cmd-tag">' + t.trim() + '</span>').join("") : "";
+            html += '<div class="cmd-card" data-cat="' + cmd.cat + '" data-search="' + (cmd.cmd + " " + cmd.desc + " " + cmd.tags).toLowerCase() + '">';
+            html += '<div class="cmd-header"><span class="cmd-name">' + cmd.cmd + '</span><span class="cmd-desc">' + cmd.desc + '</span></div>';
+            html += '<div class="cmd-example">' + formatExample(cmd.ex) + '</div>';
+            if (tags) html += '<div class="cmd-tags">' + tags + '</div>';
+            html += '</div>';
+        });
+        html += '</div></div>';
+    });
+    container.innerHTML = html;
+}
+
+function filterCommands() {
+    const query = document.getElementById("searchBox").value.toLowerCase().trim();
+    let filtered = COMMANDS;
+    if (activeCat !== "all") {
+        filtered = filtered.filter(cmd => cmd.cat === activeCat);
+    }
+    if (query) {
+        filtered = filtered.filter(cmd => {
+            const searchable = (cmd.cmd + " " + cmd.desc + " " + cmd.tags).toLowerCase();
+            return searchable.includes(query);
+        });
+    }
+    renderCommands(filtered);
+    document.getElementById("cmdCount").textContent = "Showing " + filtered.length + " of " + COMMANDS.length + " commands";
+}
+
+document.getElementById("searchBox").addEventListener("input", filterCommands);
+
+renderCategories();
+renderCommands(COMMANDS);
+document.getElementById("cmdCount").textContent = "Showing " + COMMANDS.length + " of " + COMMANDS.length + " commands";
+</script>
+</body>
+</html>
