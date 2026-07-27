@@ -177,8 +177,9 @@ function renderCommands(list) {
         html += '<div class="cmd-grid">';
         cmds.forEach(cmd => {
             const tags = cmd.tags ? cmd.tags.split(",").map(t => '<span class="cmd-tag">' + t.trim() + '</span>').join("") : "";
-            html += '<div class="cmd-card" data-cat="' + cmd.cat + '" data-search="' + (cmd.cmd + " " + cmd.desc + " " + cmd.tags).toLowerCase() + '">';
+            html += '<div class="cmd-card" data-cat="' + cmd.cat + '" data-search="' + (cmd.cmd + " " + cmd.desc + " " + cmd.detail + " " + cmd.tags).toLowerCase() + '">';
             html += '<div class="cmd-header"><span class="cmd-name">' + cmd.cmd + '</span><span class="cmd-desc">' + cmd.desc + '</span></div>';
+            if (cmd.detail) html += '<div class="cmd-detail">' + escapeHtml(cmd.detail) + '</div>';
             html += '<div class="cmd-example">' + formatExample(cmd.ex) + '</div>';
             if (tags) html += '<div class="cmd-tags">' + tags + '</div>';
             html += '</div>';
@@ -196,7 +197,7 @@ function filterCommands() {
     }
     if (query) {
         filtered = filtered.filter(cmd => {
-            const searchable = (cmd.cmd + " " + cmd.desc + " " + cmd.tags).toLowerCase();
+            const searchable = (cmd.cmd + " " + cmd.desc + " " + cmd.detail + " " + cmd.tags).toLowerCase();
             return searchable.includes(query);
         });
     }
