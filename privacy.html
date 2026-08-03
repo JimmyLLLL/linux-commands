@@ -39,5 +39,35 @@
 </main>
 <footer><p>© 2026 Linux Commands · <a href="/">Home</a></p></footer>
 <script src="js/counter.js" defer></script>
+<!-- I18N-FULL -->
+<script>
+(function(){
+var lang=(navigator.language||navigator.userLanguage||'en').toLowerCase();
+if(!lang.startsWith('zh'))return;
+var ZH={"🐧 Linux Commands":"🐧 Linux 命令","Commands":"命令","About":"关于","Privacy":"隐私","Contact":"联系","🏠 Home":"🏠 首页","Privacy Policy":"隐私政策","Last updated: July 25, 2026":"最后更新：2026 年 7 月 25 日","Linux Commands is a static reference page. We do not collect personal information. No accounts, no tracking of your searches.":"Linux 命令是一个静态参考页面。我们不收集个人信息。没有账户，也不追踪你的搜索。","1. Data":"1. 数据","This is a read-only reference site. No user data is collected or stored.":"这是一个只读参考网站。不收集或存储任何用户数据。","2. Third-Party Services":"2. 第三方服务","GitHub Pages — hosting":"GitHub Pages — 托管","Google AdSense — may show ads":"Google AdSense — 可能显示广告","Counter API — anonymous view counting":"Counter API — 匿名浏览计数","3. Advertising":"3. 广告","Google AdSense may use cookies. Manage at":"Google AdSense 可能使用 Cookie。在此管理：","4. Contact":"4. 联系","Questions? Visit our":"有疑问？访问我们的","contact page":"联系页面","👁️ Views":"👁️ 浏览量","👤 Visitors":"👤 访客","© 2026 Linux Commands ·":"© 2026 Linux 命令 ·","Home":"首页"};
+function walk(node){
+if(node.nodeType===3){
+var t=node.textContent,k=t.trim();
+if(k&&ZH[k]){node.textContent=t.replace(k,ZH[k])}
+}else if(node.nodeType===1&&node.tagName!=='SCRIPT'&&node.tagName!=='STYLE'&&node.tagName!=='NOSCRIPT'){
+if(node.childNodes.length>1){
+var full=node.textContent.trim();
+if(ZH[full]){node.textContent=ZH[full];return}
+}
+for(var i=0;i<node.childNodes.length;i++){walk(node.childNodes[i])}
+}
+}
+walk(document.body);
+document.documentElement.lang='zh-CN';
+var mo=new MutationObserver(function(muts){
+muts.forEach(function(m){
+if(m.type==='childList'){m.addedNodes.forEach(function(n){walk(n)})}
+else if(m.type==='characterData'){walk(m.target)}
+});
+});
+mo.observe(document.body,{childList:true,subtree:true,characterData:true});
+})();
+</script>
+<!-- /I18N-FULL -->
 </body>
 </html>

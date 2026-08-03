@@ -40,5 +40,35 @@
 </main>
 <footer><p>© 2026 Linux Commands · <a href="/">Home</a></p></footer>
 <script src="js/counter.js" defer></script>
+<!-- I18N-FULL -->
+<script>
+(function(){
+var lang=(navigator.language||navigator.userLanguage||'en').toLowerCase();
+if(!lang.startsWith('zh'))return;
+var ZH={"🐧 Linux Commands":"🐧 Linux 命令","Commands":"命令","About":"关于","Privacy":"隐私","Contact":"联系","🏠 Home":"🏠 首页","About Linux Commands":"关于 Linux 命令","This free online cheat sheet provides a comprehensive reference of 200+ essential Linux commands, organized into 15 categories. Each command includes a description and practical examples with common flags and options. Use the search box to instantly filter commands by name or keyword.":"这份免费的在线速查表提供了 200+ 条常用 Linux 命令的全面参考，分为 15 个类别。每条命令都包含说明和带有常用标志与选项的实用示例。使用搜索框可按名称或关键词即时筛选命令。","What's Included":"包含内容","200+ commands across 15 categories":"15 个类别中的 200+ 条命令","Real-world examples for every command":"每条命令都有实际示例","Instant search filtering":"即时搜索筛选","Category-based browsing":"按类别浏览","Syntax highlighting for commands and flags":"命令和标志的语法高亮","Mobile-friendly responsive design":"适配移动端的响应式设计","100% free, no signup, no download":"100% 免费，无需注册，无需下载","Who Is This For?":"适合谁？","Whether you're a Linux beginner learning the terminal, a developer needing quick syntax reference, or a system administrator managing servers, this cheat sheet covers the commands you use most. Bookmark it for instant access whenever you need to look up a command.":"无论你是学习终端的 Linux 初学者、需要快速查阅语法的开发者，还是管理服务器的系统管理员，这份速查表都涵盖了你最常用的命令。收藏它，以便需要查找命令时即时访问。","Browse Commands →":"浏览命令 →","👁️ Views":"👁️ 浏览量","👤 Visitors":"👤 访客","© 2026 Linux Commands ·":"© 2026 Linux 命令 ·","Home":"首页"};
+function walk(node){
+if(node.nodeType===3){
+var t=node.textContent,k=t.trim();
+if(k&&ZH[k]){node.textContent=t.replace(k,ZH[k])}
+}else if(node.nodeType===1&&node.tagName!=='SCRIPT'&&node.tagName!=='STYLE'&&node.tagName!=='NOSCRIPT'){
+if(node.childNodes.length>1){
+var full=node.textContent.trim();
+if(ZH[full]){node.textContent=ZH[full];return}
+}
+for(var i=0;i<node.childNodes.length;i++){walk(node.childNodes[i])}
+}
+}
+walk(document.body);
+document.documentElement.lang='zh-CN';
+var mo=new MutationObserver(function(muts){
+muts.forEach(function(m){
+if(m.type==='childList'){m.addedNodes.forEach(function(n){walk(n)})}
+else if(m.type==='characterData'){walk(m.target)}
+});
+});
+mo.observe(document.body,{childList:true,subtree:true,characterData:true});
+})();
+</script>
+<!-- /I18N-FULL -->
 </body>
 </html>
